@@ -1,0 +1,14 @@
+.item {
+  font-size: 18px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.itemColor {
+  composes: item;
+  color: #fd8300;
+}

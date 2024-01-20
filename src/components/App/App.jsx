@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Description } from './Description/Description';
-import { Options } from './Options/Options';
-import { Feedback } from './Feedback/Feedback';
-import { Notification } from './Notification/Notification';
+import { Description } from '../Description/Description';
+import { Options } from '../Options/Options';
+import { Feedback } from '../Feedback/Feedback';
+import { Notification } from '../Notification/Notification';
+import css from './App.module.css';
 
 export const App = () => {
   const [values, setValues] = useState(() => {
@@ -42,7 +43,7 @@ export const App = () => {
   };
 
   return (
-    <>
+    <div className={css.appContainer}>
       <Description />
       <Options
         onUpdate={onLeaveFeedback}
@@ -50,6 +51,6 @@ export const App = () => {
         onReset={onReset}
       />
       {isHidden ? <Notification /> : <Feedback values={values} />}
-    </>
+    </div>
   );
 };
